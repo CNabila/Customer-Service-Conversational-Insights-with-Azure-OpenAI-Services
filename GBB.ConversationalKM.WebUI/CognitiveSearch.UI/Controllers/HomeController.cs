@@ -141,10 +141,10 @@ namespace CognitiveSearch.UI.Controllers
             var viewModel = new AggregateInsightViewModel();
 
             // set the top origin city based on facet count
-            try
+           try
             {
                 viewModel.KeyInsight1 = documentResult.Facets
-                    .Where(x => x.key.ToLower() == "origincity")
+                    .Where(x => x.key.ToLower() == "topics")
                     .SelectMany(x => x.value)
                     .Where(x => StringHasValue(x.value))
                     .OrderByDescending(x => x.count)
@@ -160,7 +160,7 @@ namespace CognitiveSearch.UI.Controllers
             try
             {
                 viewModel.KeyInsight2 = documentResult.Facets
-                    .Where(x => x.key.ToLower() == "destinationcity")
+                    .Where(x => x.key.ToLower() == "posphrases")
                     .SelectMany(x => x.value)
                     .Where(x => StringHasValue(x.value))
                     .OrderByDescending(x => x.count)
@@ -172,23 +172,40 @@ namespace CognitiveSearch.UI.Controllers
             {
                 viewModel.KeyInsight2 = "n/a";
             }
-
-            // set the top hotels from compliments from the search
-            try
+             try
             {
-                viewModel.TopInsights = documentResult.Facets
-                    .Where(x => x.key.ToLower() == "hotel")
+                viewModel.KeyInsight3 = documentResult.Facets
+                    .Where(x => x.key.ToLower() == "negphrases")
                     .SelectMany(x => x.value)
                     .Where(x => StringHasValue(x.value))
                     .OrderByDescending(x => x.count)
                     .Select(x => x.value)
-                    .Take(5)
-                    .ToList();
+                    .Take(1)
+                    .FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                viewModel.KeyInsight3 = "n/a";
+            }
+        
+
+            // set the top hotels from compliments from the search
+              try
+            {
+                viewModel.TopInsights = documentResult.Facets
+                    .Where(x => x.key.ToLower() == "carbrand")
+                    .SelectMany(x => x.value)
+                    .Where(x => StringHasValue(x.value))
+                    .OrderByDescending(x => x.count)
+                    .Select(x => x.value)
+                    .Take(1)
+                    .Default();
 
             }
             catch (Exception e) {
                 viewModel.TopInsights.Add("n/a");
             }
+
 
             return viewModel;
         }
