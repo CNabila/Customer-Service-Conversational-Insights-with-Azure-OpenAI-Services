@@ -358,6 +358,10 @@ function UpdateResults(data, answer) {
                         <h5>Customer satisfaction</h5>
                         <div>${document.satisfied}</div>
                     </div>
+                    <div class="result-item-text">
+                        <h5>Justification</h5>
+                        <div>${document.Justification}</div>
+                    </div>
                 </div>
                 <hr style="height:1px;border-width:0;background-color:#EDEBE9">
                 <div style="margin-top:10px;margin-bottom:20px;">${tags}</div>
