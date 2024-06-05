@@ -31,5 +31,7 @@ namespace CognitiveSearch.UI.Models
         public AggregateInsightViewModel Insight1 { get; set; }
 
         public AggregateInsightViewModel Insight2 { get; set; }
+
+        public AggregateInsightViewModel Insight3 { get; set; }
     }
 }
