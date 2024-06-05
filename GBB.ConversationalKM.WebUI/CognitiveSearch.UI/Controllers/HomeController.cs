@@ -286,13 +286,12 @@ namespace CognitiveSearch.UI.Controllers
                 searchParams.currentPage = 1;
 
             string searchidId = null;
-
             if (CheckDocSearchInitialized())
                 searchidId = _docSearch.GetSearchId().ToString();
+           
 
             // build aggregate insights
             var documentResult = _docSearch.GetDocuments(searchParams.q, searchParams.searchFacets, searchParams.currentPage, searchParams.polygonString, searchParams.startDate, searchParams.endDate, searchParams.queryType);
-            
             
             var viewModel = new SearchResultViewModel
             {
