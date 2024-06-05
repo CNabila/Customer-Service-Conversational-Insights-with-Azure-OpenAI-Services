@@ -47,7 +47,7 @@ namespace CognitiveSearch.UI
             "OverallSentiment",
             "Justification",
             "Complaint",
-            "Compliment"
+            "Compliment",
 
             // Add fields needed to display results cards
 

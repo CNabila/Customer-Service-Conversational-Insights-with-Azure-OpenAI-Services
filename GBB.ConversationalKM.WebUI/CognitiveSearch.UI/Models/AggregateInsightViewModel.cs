@@ -14,7 +14,7 @@ namespace CognitiveSearch.UI.Models
 
         public AggregateInsightViewModel()
         {
-            
+            TopInsights = new List<string>();
         }
     }
 }

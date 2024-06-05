@@ -136,7 +136,7 @@ namespace CognitiveSearch.UI.Controllers
             return viewModel;
         }
 
-        public AggregateInsightViewModel GetCityInsights(DocumentResult documentResult)
+        public AggregateInsightViewModel GetTopicInsights(DocumentResult documentResult)
         {
             var viewModel = new AggregateInsightViewModel();
 
@@ -189,7 +189,6 @@ namespace CognitiveSearch.UI.Controllers
             }
         
 
-            // set the top hotels from compliments from the search
               try
             {
                 viewModel.TopInsights = documentResult.Facets
@@ -198,8 +197,8 @@ namespace CognitiveSearch.UI.Controllers
                     .Where(x => StringHasValue(x.value))
                     .OrderByDescending(x => x.count)
                     .Select(x => x.value)
-                    .Take(1)
-                    .Default();
+                    .Take(5)
+                    .ToList();
 
             }
             catch (Exception e) {
@@ -309,7 +308,7 @@ namespace CognitiveSearch.UI.Controllers
                 answer = "",
                 semanticEnabled = !String.IsNullOrEmpty(_configuration.GetSection("SemanticConfiguration")?.Value),
                 Insight1 = GetCustomerSatisfactionInsights(documentResult),
-                Insight2 = GetCityInsights(documentResult)
+                Insight2 = GetTopicInsights(documentResult)
             };
             viewModel.answer = viewModel.documentResult.Answer;
             viewModel.captions = viewModel.documentResult.Captions;
