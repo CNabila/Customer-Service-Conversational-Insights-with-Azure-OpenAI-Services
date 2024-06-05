@@ -15,6 +15,8 @@ namespace CognitiveSearch.UI
             "OverallSentiment",
             "AgentName",
             "Topics",
+            "Complaint",
+            "Compliment",
             "PosPhrases",
             "NegPhrases"
             
@@ -43,7 +45,9 @@ namespace CognitiveSearch.UI
             "summary",
             "satisfied",
             "OverallSentiment",
-            "Justification"
+            "Justification",
+            "Complaint",
+            "Compliment"
 
             // Add fields needed to display results cards
 
