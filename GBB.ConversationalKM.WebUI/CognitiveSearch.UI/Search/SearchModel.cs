@@ -12,6 +12,8 @@ namespace CognitiveSearch.UI
         {
             // Add UI facets here in order
             "CarBrand", 
+            "Stage",
+            "satisfied",
             "OverallSentiment",
             "AgentName",
             "Topics",
