@@ -11,19 +11,21 @@ namespace CognitiveSearch.UI
         private string[] facets = new string[]
         {
             // Add UI facets here in order
-            //"people", 
-            //"locations",
-            //"organizations",
-            //"keyphrases"
+            "CarBrand", 
+            "OverallSentiment",
+            "AgentName",
+            "Topics",
+            "PosPhrases",
+            "NegPhrases"
+            
         };
 
         private string[] tags = new string[]
         {
             // Add tags fields here in order
-            //"people", 
-            //"locations",
-            //"organizations",
-            //"keyphrases"
+            "Topics", 
+            "CarBrand",
+            "keyphrases"
         };
 
         private string[] resultFields = new string[]
@@ -34,12 +36,14 @@ namespace CognitiveSearch.UI
             "Messages",
             "StartTime",
             "EndTime",
-            "keyphrases",
-            "DestCity",
-            "OriginCity",
-            "hotels",
+            "Topics",
+            "PosPhrases",
+            "NegPhrases",
+            "CarBrand",
             "summary",
             "satisfied",
+            "OverallSentiment",
+            "Justification"
 
             // Add fields needed to display results cards
 
