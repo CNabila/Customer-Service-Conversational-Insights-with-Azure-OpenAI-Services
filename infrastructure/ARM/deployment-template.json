@@ -19,7 +19,7 @@
     },
     "openAIFunctionDockerImageReference": {
       "type": "string",
-      "defaultValue": "DOCKER|ckmuicontainer.azurecr.io/ckm-acs-oai-async:latest",
+      "defaultValue": "DOCKER||callcenterrepo.azurecr.io/func-openai:latest",
       "metadata": {
         "description": "The reference to the OpenAI Function Docker image for the Linux App Service Plan"
       }
