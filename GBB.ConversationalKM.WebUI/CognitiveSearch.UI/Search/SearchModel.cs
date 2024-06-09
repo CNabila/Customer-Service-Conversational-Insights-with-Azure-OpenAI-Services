@@ -20,7 +20,15 @@ namespace CognitiveSearch.UI
             "Complaint",
             "Compliment",
             "PosPhrases",
-            "NegPhrases"
+            "NegPhrases",
+            "committed",
+            "carNotAvailable",
+            "gradeNotAvailable",
+            "financialNotEligible",
+            "fuelEffeciency",
+            "priceToohigh",
+            "NoServiceOffer"
+
             
         };
 
@@ -50,6 +58,13 @@ namespace CognitiveSearch.UI
             "Justification",
             "Complaint",
             "Compliment",
+            "committed",
+            "carNotAvailable",
+            "gradeNotAvailable",
+            "financialNotEligible",
+             "fuelEffeciency",
+            "priceToohigh",
+            "NoServiceOffer",
 
             // Add fields needed to display results cards
 

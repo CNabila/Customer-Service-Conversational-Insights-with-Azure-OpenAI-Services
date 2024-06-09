@@ -31,14 +31,7 @@ namespace CognitiveSearch.UI.Controllers
 
         private void InitializeDocSearch()
         {
-            try
-            {
-                _docSearch = new DocumentSearchClient(_configuration);
-            }
-            catch (Exception e)
-            {
-                _configurationError = $"The application settings are possibly incorrect. The server responded with this message: " + e.Message.ToString();
-            }
+            _docSearch = new DocumentSearchClient(_configuration);
         }
 
         public bool CheckDocSearchInitialized()
@@ -192,7 +185,7 @@ namespace CognitiveSearch.UI.Controllers
               try
             {
                 viewModel.TopInsights = documentResult.Facets
-                    .Where(x => x.key.ToLower() == "carbrand")
+                    .Where(x => x.key.ToLower() == "compliment")
                     .SelectMany(x => x.value)
                     .Where(x => StringHasValue(x.value))
                     .OrderByDescending(x => x.count)
